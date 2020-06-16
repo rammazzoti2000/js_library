@@ -1,3 +1,10 @@
+const form = document.querySelector('.form');
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const pages = document.getElementById('pages');
+const table = document.querySelector('.table');
+const newPar = document.createElement('p');
+
 let myLibrary = [];
 class Book {
   constructor(title, author, pages) {
@@ -16,20 +23,22 @@ function showAllBooks() {
   let allBooks = '';
 
   for (let i = 0; i < myLibrary.length; i += 1) {
-    allBooks += `<p>${myLibrary[i].title}</p>`;
+    allBooks += `<p>${myLibrary[i].title}</p>`;    
   }
-
-  const table = document.querySelector('.table');
-  render(allBooks, table);
+  
+  render(table, allBooks);
 }
 
-function addBookToLibrary() {
-  const title = document.getElementById('title').value;
-  const author = document.getElementById('author').value;
-  const pages = document.getElementById('pages').value;
+function addBookToLibrary(event) {  
   // const read = document.getElementById('read').value;
-
-  let book = new Book(title, author, pages);
+  let book = new Book(title.value, author.value, pages.value);
   myLibrary.push(book);
   showAllBooks();
+  event.preventDefault();
+  title.value = '';
+  author.value = '';
+  pages.value = '';
+  console.log(myLibrary);  
 }
+
+form.addEventListener('submit', addBookToLibrary);
