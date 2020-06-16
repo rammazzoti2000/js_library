@@ -4,6 +4,7 @@ const author = document.getElementById('author');
 const pages = document.getElementById('pages');
 const table = document.querySelector('.table');
 const newPar = document.createElement('p');
+const btn = document.getElementById('btn');
 
 let myLibrary = [];
 class Book {
@@ -41,4 +42,9 @@ function addBookToLibrary(event) {
   console.log(myLibrary);  
 }
 
+function showForm () {
+  form.classList.toggle('visible');
+}
+
+btn.addEventListener('click', showForm);
 form.addEventListener('submit', addBookToLibrary);
