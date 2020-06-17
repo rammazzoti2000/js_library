@@ -98,9 +98,9 @@ button:hover {
 .modal-content {
   background-color: #fefefe;
   margin: auto;
-  padding: 20px;
+  padding: 20px 40px 40px;
   border: 1px solid #888;
-  width: 80%;
+  width: 30%;
 }
 
 /* The Close Button */
@@ -109,6 +109,7 @@ button:hover {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  clear: both;
 }
 
 .close:hover,
@@ -120,4 +121,40 @@ button:hover {
 
 .create-button {
   margin-left: 14px;
+}
+
+.label-wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  float: none;
+  clear: both;
+  width: 85%;
+  margin: 15px auto;
+}
+
+label {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+input {
+  height: 39px;
+  font-size: 1.1rem;
+  padding-left: 7px;
+  border-radius: 4px;
+  border: none;
+  background-color: gainsboro;
+  width: 100%
+}
+
+#read {
+  width: 15px;
+  vertical-align: sub;
+}
+
+.submit-label {
+  display: inline-flex;
+  align-items: center;
 }

@@ -6,7 +6,11 @@ const read = document.getElementById('read');
 const table = document.querySelector('.table');
 // const btn = document.getElementById('btn');
 
-const myLibrary = [];
+const myLibrary = [{title: 'The Hobbit', author: 'J.J.R. Tolkien', pages: '304', read: 'Haven\'t read it yet'},
+  {title: 'To Kill a Mockingbird', author: 'Harper Lee', pages: '281', read: 'Already read it'},
+  {title: 'Invisible Man', author: 'Ralph Ellison', pages: '516', read: 'Haven\'t read it yet'},
+  {title: 'The Forsyte Saga', author: 'John Galsworthy', pages: '912', read: 'Already read it'}];
+  render();
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -98,9 +102,9 @@ function addBookToLibrary(event) {
   }
   event.preventDefault();
   console.log(myLibrary);
+  modal.style.display = "none";
   // form.classList.remove('visible');
 }
-
 // function showForm() {
 //   form.classList.toggle('visible');
 // }
