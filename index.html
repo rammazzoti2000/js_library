@@ -6,33 +6,42 @@
     <title>Library</title>
   </head>
   <body>
-    <div class="alert">
-      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      This is an alert box.
-    </div>
-    <button id="btn">Create book</button>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
     <form class="form invisible" action="index.html" method="post">
-      <div class="label-wrap">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" placeholder="Enter the title">
+          <div class="label-wrap">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" placeholder="Enter the title">
+          </div>
+          <div class="label-wrap">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" placeholder="Enter the author">
+          </div>
+          <div class="label-wrap">
+            <label for="pages">Pages</label>
+            <input type="number" name="pages" id="pages" placeholder="Enter the number of pages">
+          </div>
+          <div class="label-wrap">
+            <label for="read">Already read it ?</label>
+            <input type="checkbox" name="read" id="read">
+          </div>
+          <input type="submit" value="submit">
+        </form>
+  </div>
+
+</div>
+    <div class="cards">
+      <h1>Library Book</h1>
+      <h2>Your Books<span class="create-button"><button id="btn">Create Book</button></span></h2>
+      <div class="table">
       </div>
-      <div class="label-wrap">
-        <label for="author">Author</label>
-        <input type="text" name="author" id="author" placeholder="Enter the author">
-      </div>
-      <div class="label-wrap">
-        <label for="pages">Pages</label>
-        <input type="number" name="pages" id="pages" placeholder="Enter the number of pages">
-      </div>
-      <div class="label-wrap">
-        <label for="read">Already read it ?</label>
-        <input type="checkbox" name="read" id="read">
-      </div>
-      <input type="submit" value="submit">
-    </form>   
-    <div class="table">
-      <p></p>     
     </div>
-     <script src='index.js'></script>
+    <script src='index.js'></script>
   </body>
 </html>

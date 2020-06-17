@@ -1,19 +1,123 @@
-.invisible {
+html {
+  font-family: Arial, sans-serif;
+}
+
+.cards {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.table {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+p {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 20%;
+  padding: 10px;
+  margin: 10px;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  overflow-wrap: break-word;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.6);
+  border: 4px solid rgba(0, 0, 0, 0.4);
+}
+
+button {
+  outline: none;
+  height: 32px;
+  width: 70%;
+  margin: 4px auto;
+  font-size: medium;
+  border-radius: 5px;
+  border: none;
+  background: linear-gradient(rgb(114, 114, 114), rgb(148, 147, 147) 50%, rgb(88, 88, 88) 45%);
+  color: inherit;
+  cursor: pointer;
+  text-shadow: 3px 2px 4px rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+button:hover {
+   background: linear-gradient(rgb(63, 63, 63), rgb(148, 147, 147) 50%, rgb(51, 51, 51) 45%);
+}
+
+#btn {
+  width: 138px;
+  height: 38px;
+  color: floralwhite;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 3px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* .invisible {
     display: none;
 }
 
 .visible {
     display: block;
-}
+} */
 
 .green {
-    background-color: green;
-    color: white;
-    cursor: pointer;
+    background-color: limegreen;
 }
 
-.red { 
-    background-color: red;
-    color: white;
-    cursor: pointer;
+.red {
+    background-color: crimson;
+}
+
+.green,
+.red {
+  color: white;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.create-button {
+  margin-left: 14px;
 }
