@@ -4,25 +4,38 @@ const author = document.getElementById('author');
 const pages = document.getElementById('pages');
 const read = document.getElementById('read');
 const table = document.querySelector('.table');
-// const btn = document.getElementById('btn');
+const modal = document.getElementById('myModal');
 
-const myLibrary = [{title: 'The Hobbit', author: 'J.J.R. Tolkien', pages: '304', read: 'Haven\'t read it yet'},
-  {title: 'To Kill a Mockingbird', author: 'Harper Lee', pages: '281', read: 'Already read it'},
-  {title: 'Invisible Man', author: 'Ralph Ellison', pages: '516', read: 'Haven\'t read it yet'},
-  {title: 'The Forsyte Saga', author: 'John Galsworthy', pages: '912', read: 'Already read it'}];
-  render();
+const myLibrary = [{
+  title: 'The Hobbit', author: 'J.J.R. Tolkien', pages: '304', read: 'Haven\'t read it yet',
+},
+{
+  title: 'To Kill a Mockingbird', author: 'Harper Lee', pages: '281', read: 'Already read it',
+},
+{
+  title: 'Invisible Man', author: 'Ralph Ellison', pages: '516', read: 'Haven\'t read it yet',
+},
+{
+  title: 'The Forsyte Saga', author: 'John Galsworthy', pages: '912', read: 'Already read it',
+}];
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+function readStatus() {
+  const attr = this.getAttribute('id');
+  if (myLibrary[attr].read === 'Already read it') {
+    myLibrary[attr].read = "Haven't read it yet";
+    this.classList.remove('green');
+    render(); // eslint-disable-line no-use-before-define
+  } else if (myLibrary[attr].read === "Haven't read it yet") {
+    myLibrary[attr].read = 'Already read it';
+    this.classList.remove('red');
+    render(); // eslint-disable-line no-use-before-define
+  }
 }
 
 function remove() {
   const attr = this.getAttribute('class');
   myLibrary.splice(attr, 1);
-  render();
+  render(); // eslint-disable-line no-use-before-define
 }
 
 function render() {
@@ -32,7 +45,11 @@ function render() {
     const movieEl = document.createElement('p');
     movieEl.setAttribute('id', `${index}`);
 
-    myLibrary[index].read == 'Already read it' ? movieEl.classList.add('green') :  movieEl.classList.add('red');
+    if (myLibrary[index].read === 'Already read it') {
+      movieEl.classList.add('green');
+    } else {
+      movieEl.classList.add('red');
+    }
 
     const butt = document.createElement('button');
     butt.setAttribute('class', `${index}`);
@@ -72,6 +89,15 @@ function render() {
   });
 }
 
+render();
+
+function Book(title, author, pages, read) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
+}
+
 function checkBox() {
   if (read.checked) {
     read.value = 'Already read it';
@@ -82,7 +108,7 @@ function checkBox() {
 
 function validate() {
   if (title.value === '' || author.value === '' || pages.value === '') {
-    alert('You must fill all the fields');
+    alert('You must fill all the fields'); // eslint-disable-line no-alert
     return false;
   }
   return true;
@@ -101,54 +127,25 @@ function addBookToLibrary(event) {
     pages.value = '';
   }
   event.preventDefault();
-  console.log(myLibrary);
-  modal.style.display = "none";
-  // form.classList.remove('visible');
-}
-// function showForm() {
-//   form.classList.toggle('visible');
-// }
-
-function readStatus() {
-  const attr = this.getAttribute('id');
-  console.log(this);
-  if (myLibrary[attr].read === 'Already read it') {
-    myLibrary[attr].read = "Haven't read it yet";
-    this.classList.remove('green');
-    console.log('worked!');
-    render();
-  } else if (myLibrary[attr].read === "Haven't read it yet") {
-    myLibrary[attr].read = 'Already read it';
-    this.classList.remove('red');
-    render();
-  }
+  modal.style.display = 'none';
 }
 
-// btn.addEventListener('click', showForm);
 form.addEventListener('submit', addBookToLibrary);
 
-// Get the modal
-var modal = document.getElementById("myModal");
+const btn = document.getElementById('btn');
 
-// Get the button that opens the modal
-var btn = document.getElementById("btn");
+const span = document.getElementsByClassName('close')[0];
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+btn.onclick = () => {
+  modal.style.display = 'block';
+};
 
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+span.onclick = () => {
+  modal.style.display = 'none';
+};
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+window.onclick = (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
   }
-}
+};

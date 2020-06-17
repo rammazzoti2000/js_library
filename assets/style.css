@@ -25,7 +25,7 @@ p {
   font-weight: 800;
   overflow-wrap: break-word;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
   border: 4px solid rgba(0, 0, 0, 0.4);
 }
 
@@ -46,7 +46,7 @@ button {
 }
 
 button:hover {
-   background: linear-gradient(rgb(63, 63, 63), rgb(148, 147, 147) 50%, rgb(51, 51, 51) 45%);
+  background: linear-gradient(rgb(63, 63, 63), rgb(148, 147, 147) 50%, rgb(51, 51, 51) 45%);
 }
 
 #btn {
@@ -58,20 +58,12 @@ button:hover {
   text-shadow: 3px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* .invisible {
-    display: none;
-}
-
-.visible {
-    display: block;
-} */
-
 .green {
-    background-color: limegreen;
+  background-color: limegreen;
 }
 
 .red {
-    background-color: crimson;
+  background-color: crimson;
 }
 
 .green,
@@ -79,22 +71,20 @@ button:hover {
   color: white;
 }
 
-/* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Modal Content */
 .modal-content {
   background-color: #fefefe;
   margin: auto;
@@ -103,9 +93,8 @@ button:hover {
   width: 30%;
 }
 
-/* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -146,7 +135,7 @@ input {
   border-radius: 4px;
   border: none;
   background-color: gainsboro;
-  width: 100%
+  width: 100%;
 }
 
 #read {
