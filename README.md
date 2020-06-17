@@ -56,7 +56,7 @@
 
 In this project, it has been built an application named Library where users can create books with title, author, number of pages and the `read` flag whether the was read or not. The goal was to put in practice the main concepts of JavaScript to create dynamic front-end content.
 
-!screenshot](images/screenshot.png)
+![screenshot](assets/images/screenshot.png)
 
 ### Built With
 This project was built using these technologies.
