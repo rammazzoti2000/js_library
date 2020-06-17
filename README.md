@@ -88,7 +88,7 @@ To have this app on your pc, you need to:
  > No automated tests yet
 
 ## Live Demo
-[Live Demo](https://rawcdn.githack.com/rammazzoti2000/js_library/feature/user_interface/index.html) :point_left:
+[Live Demo](https://raw.githack.com/rammazzoti2000/js_library/feature/user_interface/index.js) :point_left:
 
 <!-- CONTACT -->
 ## Contributors
