@@ -2,9 +2,9 @@ const form = document.querySelector('.form');
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 const pages = document.getElementById('pages');
-const table = document.querySelector('.table');
 const newPar = document.createElement('p');
 const btn = document.getElementById('btn');
+const table = document.querySelector('.table');
 
 let myLibrary = [];
 class Book {
@@ -16,25 +16,36 @@ class Book {
   }
 }
 
-function render(container, content) {
-  container.innerHTML = content;
+function remove() {
+  let attr = this.getAttribute('class');  
+  myLibrary.splice(attr, 1);
+  render();
 }
 
-function showAllBooks() {
+
+function render() {
   let allBooks = '';
-
-  for (let i = 0; i < myLibrary.length; i += 1) {
-    allBooks += `<p>${myLibrary[i].title}</p>`;    
-  }
   
-  render(table, allBooks);
-}
+  table.innerHTML = '';
 
-function addBookToLibrary(event) {  
-  // const read = document.getElementById('read').value;
+  myLibrary.forEach((book, index) =>  {
+    const movieEl = document.createElement('li');
+    const butt = document.createElement('button');
+    butt.setAttribute('class', `${index}`);
+    butt.innerHTML = 'Delete';    
+    butt.addEventListener('click', remove);        
+    let text = book.title;
+    movieEl.textContent = text;
+    movieEl.append(butt);
+    table.append(movieEl);
+  });  
+};
+
+function addBookToLibrary(event) { 
+  event.preventDefault();  
   let book = new Book(title.value, author.value, pages.value);
   myLibrary.push(book);
-  showAllBooks();
+  render();
   event.preventDefault();
   title.value = '';
   author.value = '';
