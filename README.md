@@ -26,7 +26,7 @@
     <img src="assets/images/microverse.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Associations --> [Library]</h3>
+  <h3 align="center">JavaScript --> [Library]</h3>
 
   <p align="center">
     This project is part of the Microverse curriculum in JavaScript module!
@@ -60,10 +60,11 @@ In this project, it has been built an application named Library where users can 
 
 ### Built With
 This project was built using these technologies.
+* HTML/CSS
 * JavaScript
 * ESLint
 * StyleLint
-* GithubActionc :muscle:
+* GithubActions :muscle:
 * Atom :atom:
 * VSCode :vs:
 
@@ -81,13 +82,13 @@ To have this app on your pc, you need to:
   ```
     https://github.com/rammazzoti2000/js_library.git
   ```
-- and using ```localhost:3000``` into your browser address bar to start using it
+- and open ```index.html``` file with a browser of your choice.
 
-  ## Automated Test
-  > No automated tests yet
+## Automated Test
+ > No automated tests yet
 
-  ## Live Demo
-  [Live Demo](https://rawcdn.githack.com/rammazzoti2000/js_library/feature/user_interface/index.html) :point_left:
+## Live Demo
+[Live Demo](https://rawcdn.githack.com/rammazzoti2000/js_library/feature/user_interface/index.html) :point_left:
 
 <!-- CONTACT -->
 ## Contributors
